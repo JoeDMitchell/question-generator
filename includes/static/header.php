@@ -22,7 +22,10 @@
 
 		<div class="row">
 
-	
+			<div class="col">
+				<h1 class="mt-gutter">Question Generator</h1>
+				<hr>
+			</div>
 
 		</div><!-- /row -->
 

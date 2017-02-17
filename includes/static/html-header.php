@@ -9,7 +9,7 @@
 	<meta name="description" content="">
 	<link rel="shortcut icon" href="img/favicon.ico"/>
 
-	<title>Boilerplate</title>
+	<title>Questions Generator</title>
 
 	<!--[if ! lte IE 7]><!-->
 		<link rel="stylesheet" id="screen-css" href="css/main/core.css" type="text/css" media="screen"/>

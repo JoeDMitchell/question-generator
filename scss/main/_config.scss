@@ -41,12 +41,21 @@ $font-primary: Arial, Helvetica, sans-serif;
 $font-secondary: Georgia, Times, serif;
 $font-monospace: Menlo, Monaco, "Courier New", monospace;
 
-$color-gray-light: #e6e9ef;
-
 /// Colours
-$color-white: #fff;
-$color-red: #ff0000;
-$color-code: #dd1144;
+$color-white: #ffffff;
+$color-dark: #050e22;
+
+$color-pink: #fc0063;
+
+
+$color-blue: #0f57be;
+$color-blue-dark: #18283e;
+
+$color-gray-light: #eeeeef;
+$color-gray-light--alt: #f7f7f7;
+$color-gray-med: #6c7a8b;
+
 
 $color-lightest: $color-white;
-$color-highlight: $color-red;
+$color-darkest: $color-dark;
+$color-highlight: $color-pink;

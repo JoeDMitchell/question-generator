@@ -2,28 +2,44 @@
 BUTTONS ----------------------------------------------------------------
 --------------------------------------------------------------------- */
 
-/* Block components */
-
 %btn {
-	padding: 8px 10px;
-}
-
-.btn-primary {
-	@extend %btn;
-
-	&:hover{
+	padding: 13px 20px 13px;
+	border-radius:none;
+	border-radius:0;
+  	-webkit-appearance: none;
+  	-webkit-border-radius: 0;
+	width:100%;
+	@include font-size(16);
+	color:$color-lightest;
+	text-decoration:none;
+	display:inline-block;
+	@include single-transition(background-color,0.2s);
+	text-align: center;
+	margin-bottom:$gutter;
+	cursor:pointer;
+	@include mq(bpxs) {
+		text-align: left;
+	    padding: 10px 11px 9px;
+	    @include font-size(14);
+	    width:auto;
+	}
+	&:hover {
+		color:$color-white;
+	}
+	i {
+		background-repeat:no-repeat;
+		display:inline-block;
 		
 	}
 }
 
-	/* Elements that depends upon the block */
-
-	.btn-primary__icon {
-
-	}
-
-		/* Modifiers that changes the style of the block */
-
-		.btn--large {
-
+.btn-primary {
+	@extend %btn;
+	background-color:$color-blue;
+	@include mq(bps) {
+		&:hover{
+			background-color:$color-highlight;
 		}
+	}
+	
+}

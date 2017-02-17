@@ -74,6 +74,13 @@ cite {
   margin-bottom: $gutter;
 }
 
+hr {
+  height:1px;
+  width:100%;
+  background-color:$color-gray-light;
+  margin-bottom:$gutter;
+}
+
 
 /*------------------------------------
 Forms (Base) -------------------------
@@ -87,31 +94,107 @@ label {
   padding-bottom: 10px;
 }
 
+form {
+  margin-bottom: 0;
+}
+
+label {
+  padding-bottom: 3px;
+  display:block;
+  @include font-size(14);
+  @include font-stack($font-primary);
+  @include single-transition(all,0.3s);
+}
+
 input {
   margin-bottom: $gutter;
+  @include font-size(16);
 }
 
 input[type="text"],
-input[type="email"] {
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+input[type="password"] {
+  line-height: 1.2;
+  @include font-size(16);
   width: 100%;
-  border: 1px solid #ccc;
-  padding: 10px;
-  font-weight: lighter;
+  max-width:500px;
+  border: none;
+  padding: 13px 20px 13px;
+  background-color: $color-gray-light;
+  border-radius:0;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  @include single-transition(all,0.3s);
+  @include mq(bpxs) {
+    @include font-size(14);
+    padding: 10px 11px 9px;
+  }
+
+}
+
+input[type="number"] {
+  width:100px;
 }
 
 input[type="textarea"] {
   @extend input[type="text"];
   min-height: 120px;
+  max-width:none;
 }
 
 select {
   @extend input[type="text"];
 }
 
+.select-style, .select2-container .select2-choice {
+    padding: 0;
+    margin: 0 0 $gutter 0;
+    border: none;
+    width: 100%;
+    border-radius: 0;
+    overflow: hidden;
+    background-color: $color-gray-light;
+    @include background-image('icon-arrow-down--dark',14px 8px);
+    background-repeat:no-repeat;
+    background-position:50% 90%;
+    background-position:center right 15px;
+    max-width:500px;
+
+    select {
+      @extend input[type="text"];
+      width: 130%;
+      box-shadow: none;
+      background-color: transparent !important;
+      background-image: none;
+      margin:0;
+      -webkit-appearance: none;
+         -moz-appearance: none;
+              appearance: none;
+      &:focus {
+        outline: none;
+      }
+    }
+
+      .select2-chosen {
+        @include mq(bps) {
+          @include font-size(14);
+          padding: 10px 11px 9px;
+        }
+      }
+
+      .select2-arrow {
+        display:none;
+      }
+
+}
+
 textarea {
+  @extend input[type="text"];
   min-height: 120px;
+  max-width:none;
   width: 100%;
-  border: 1px solid #ddd;
   padding: $gutter / 2;
   margin-bottom: $gutter / 4;
 
@@ -123,6 +206,13 @@ textarea {
     min-height: 220px;
   }
 
+}
+
+button {
+  background-color:transparent;
+  &:focus {
+    outline:0;
+  }
 }
 
 /*------------------------------------
@@ -147,3 +237,21 @@ ol li {
   list-style-position: inside;
 }
 
+/*---------------------------------
+Tables -----------------------
+-------------------------------- */
+
+table {
+  border:1px solid $color-gray-light;
+  width:100%;
+  th {
+    padding:10px 8px;
+  }
+  td {
+    border:1px solid $color-gray-light;
+    padding:8px;
+    &:nth-child(3) {
+      width:50%;
+    }
+  }
+}
