@@ -1,0 +1,34 @@
+/* ---------------------------------------------------------------------
+CODE -------------------------------------------------------------------
+--------------------------------------------------------------------- */
+code,
+pre {
+	font-family: $font-monospace;
+	@include font-size(14px);
+	@include border-radius(25px);
+}
+
+code {
+	color: $color-code;
+	background-color: lighten( $color-gray-light, 7% );
+	padding: calc-em(4px);
+}
+
+pre {
+	display: block;
+	margin-bottom: $gutter;
+	line-height: 1.5;
+	background-color: lighten( $color-gray-light, 6% );
+	padding: calc-em(13px);
+	tab-size: 4;
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+pre code {
+	font-size: 1em;
+	padding: 0;
+	color: inherit;
+	background-color: transparent;
+	border: 0;
+}

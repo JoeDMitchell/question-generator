@@ -1,0 +1,22 @@
+/* ---------------------------------------------------------------------
+MODULES -------------------------------------------------------------------
+(Reusable, modular parts of our design. These should work independently of layout)
+--------------------------------------------------------------------- */
+
+/*------------------------------------
+Boxes
+----------------------------------- */
+
+%box //This has to be @extended 
+{
+	padding: $global-padding;
+}
+
+	.box__promo {
+		@extended %box;
+		background-color: $color-lightest;
+	}
+
+		.box__promo--highlight {
+			background-color: $color-highlight;
+		}
