@@ -11,7 +11,7 @@ function generateOpQ($intDig,$intDec,$operator,$actDig,$actDec){
 					'addition' => '+',
 					'subtraction' => '-',
 					'multiplication' => 'x',
-					'division' => '/'
+					'division' => '&divide'
 				);
 
 	$op = $operators[$operator];
