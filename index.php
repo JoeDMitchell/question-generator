@@ -12,8 +12,16 @@ include 'includes/static/header.php'; ?>
 			
 			<form action="generate/operations.php" class="operations" method="post">
 
-				<label for="initial-digits">Amount of digits in initial number</label>
-				<input type="number" name="initial-digits" value="1" min="1">
+				<div class="row">
+					<div class="col bpm-col-6">
+						<label for="initial-digits">Amount of digits in initial number</label>
+						<input type="number" name="initial-digits" value="1" min="1">		
+					</div>
+					<div class="col bpm-col-6">
+						<label for="initial-decimals">Amount of decimal places in initial number</label>
+						<input type="number" name="initial-decimals" value="0" min="0">		
+					</div>
+				</div>
 				
 				<label for="initial">Operator</label>
 				<div class="select-style">
@@ -26,8 +34,18 @@ include 'includes/static/header.php'; ?>
 					</select>
 				</div>
 
-				<label for="actor-digits">Amount of digits in acting number</label>
-				<input type="number" name="actor-digits" value="1" min="1">
+				<div class="row">
+					<div class="col bpm-col-6">
+						<label for="actor-digits">Amount of digits in acting number</label>
+						<input type="number" name="actor-digits" value="1" min="1">
+					</div>
+					<div class="col bpm-col-6">
+						<label for="actor-decimals">Amount of decimal places in acting number</label>
+						<input type="number" name="actor-decimals" value="0" min="0">
+					</div>
+				</div>
+
+				
 
 				<label for="questions-amount">Amount of questions</label>
 				<input type="number" name="questions-amount" value="10" min="0">

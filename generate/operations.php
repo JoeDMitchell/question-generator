@@ -5,7 +5,7 @@ function xDigitNo($digits){
 	return rand(pow(10, $digits-1), pow(10, $digits)-1);
 }
 
-function generateOpQ($intDig,$operator,$actDig){
+function generateOpQ($intDig,$intDec,$operator,$actDig,$actDec){
 
 	$operators = array(
 					'addition' => '+',
@@ -15,20 +15,25 @@ function generateOpQ($intDig,$operator,$actDig){
 				);
 
 	$op = $operators[$operator];
-	$int = xDigitNo($intDig);
-	$act = xDigitNo($actDig);
+	$int = xDigitNo($intDig + $intDec);
+	$act = xDigitNo($actDig + $actDec);
 
-	return $int.' '.$op.' '.$act.' =';
+	$intDiv = pow(10,$intDec);
+	$actDiv = pow(10,$actDec);
+
+
+
+	return $int / $intDiv.' '.$op.' '.$act / $actDiv.' =';
 
 }
 
-function returnGenerations($count,$intDig,$operator,$actDig){
+function returnGenerations($count,$intDig,$intDec,$operator,$actDig,$actDec){
 
 	$result = '<table><tr><th colspan="3">'.ucwords($operator).'</th></tr>';
 	$i = 0;
 	while ($i++ < $count)
 	{
-	    $result .= '<tr><td>'.$i.'</td><td>'.generateOpQ($intDig,$operator,$actDig).'</td><td></td></tr>';
+	    $result .= '<tr><td>'.$i.'</td><td>'.generateOpQ($intDig,$intDec,$operator,$actDig,$actDec).'</td><td></td></tr>';
 	}
 
 	$result .= '</table>';
@@ -39,9 +44,9 @@ function returnGenerations($count,$intDig,$operator,$actDig){
 
 if($_POST) {
 
-    if(!isset($_POST['initial-digits']) || !isset($_POST['actor-digits'])) {
+    if(!isset($_POST['initial-digits']) || !isset($_POST['actor-digits']) || !isset($_POST['actor-decimals']) || !isset($_POST['initial-decimals'])) {
 
-      	$_SESSION['error'] = "Please enter the required digits";
+      	$_SESSION['error'] = "Please enter the required digits and decimals";
 
     } elseif(!isset($_POST['operator'])) {
 
@@ -54,11 +59,13 @@ if($_POST) {
     } else {
 
     	$initial_digits = $_POST['initial-digits'];
+    	$initial_decimals = $_POST['initial-decimals'];
     	$operator = $_POST['operator'];
     	$actor_digits = $_POST['actor-digits'];
+    	$actor_decimals = $_POST['actor-decimals'];
     	$questions_amount = $_POST['questions-amount'];
       
-    	$_SESSION['result'] = returnGenerations($questions_amount,$initial_digits,$operator,$actor_digits);
+    	$_SESSION['result'] = returnGenerations($questions_amount,$initial_digits,$initial_decimals,$operator,$actor_digits,$actor_decimals);
       	
     }
 
