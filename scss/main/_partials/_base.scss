@@ -144,6 +144,11 @@ input[type="textarea"] {
   max-width:none;
 }
 
+input + label {
+  display:inline-block;
+  margin-left:10px;
+}
+
 select {
   @extend input[type="text"];
 }

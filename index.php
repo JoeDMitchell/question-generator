@@ -34,7 +34,12 @@ include 'includes/static/header.php'; ?>
 					</select>
 				</div>
 
-				<div class="row">
+				<input type="checkbox" name="set-actor" data-showhide="set-actor" id="set-actor"><label for="set-actor">Set acting number?</label>
+
+				<label for="actor-number" data-hidden="set-actor" class="hidden">Acting number</label>
+				<input type="number" name="actor-number" data-hidden="set-actor" class="hidden" min="1" value="10">
+
+				<div class="row" data-hidden="set-actor">
 					<div class="col bpm-col-6">
 						<label for="actor-digits">Amount of digits in acting number</label>
 						<input type="number" name="actor-digits" value="1" min="1">
@@ -44,8 +49,6 @@ include 'includes/static/header.php'; ?>
 						<input type="number" name="actor-decimals" value="0" min="0">
 					</div>
 				</div>
-
-				
 
 				<label for="questions-amount">Amount of questions</label>
 				<input type="number" name="questions-amount" value="10" min="0">

@@ -3,5 +3,6 @@
 (function() {
 
 	Copy.init();
+	ShowHide.init();
 
 })();
