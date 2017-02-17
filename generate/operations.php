@@ -15,15 +15,15 @@ function generateOpQ($intDig,$intDec,$operator,$actDig,$actDec){
 				);
 
 	$op = $operators[$operator];
-	$int = xDigitNo($intDig + $intDec);
-	$act = xDigitNo($actDig + $actDec);
+	$int = xDigitNo($intDig);
+	$act = xDigitNo($actDig);
 
 	$intDiv = pow(10,$intDec);
 	$actDiv = pow(10,$actDec);
 
 
 
-	return $int / $intDiv.' '.$op.' '.$act / $actDiv.' =';
+	return number_format($int / $intDiv, $intDec, '.', '').' '.$op.' '.number_format($act / $actDiv, $actDec, '.', '').' =';
 
 }
 
