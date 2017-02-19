@@ -21,13 +21,14 @@ function generateOpQ($intDig,$intDec,$operator,$actDig,$actDec,$actor){
 	$intDiv = pow(10,$intDec);
 	$actDiv = pow(10,$actDec);
 
-	if ($actor == false){
-		return number_format($int / $intDiv, $intDec, '.', '').' '.$op.' '.number_format($act / $actDiv, $actDec, '.', '').' =';
-	} else {
-		return number_format($int / $intDiv, $intDec, '.', '').' '.$op.' '.$actor.' =';
+	$intTotal = number_format($int / $intDiv, $intDec, '.', '');
+	$actTotal = number_format($act / $actDiv, $actDec, '.', '');
+
+	if ($actor !== false){
+		$actTotal = $actor;
 	}
 
-	
+	return $intTotal.' '.$op.' '.$actTotal.' =';
 
 }
 
